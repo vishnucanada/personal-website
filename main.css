@@ -1,0 +1,547 @@
+/* Solarized Dark + One Dark Pro Inspired Theme */
+:root {
+    --base03: #282C34;
+    --base02: #21252B;
+    --base01: #586e75;
+    --base00: #657b83;
+    --base0: #abb2bf;  /* Changed to One Dark's text color */
+    --base1: #93a1a1;
+    --base2: #eee8d5;
+    --base3: #fdf6e3;
+    --yellow: #E5C07B;
+    --orange: #D19A66; /* Softer orange */
+    --red: #E06C75;
+    --magenta: #C678DD; /* More vibrant */
+    --violet: #6c71c4;
+    --blue: #61AFEF;
+    --cyan: #56B6C2;
+    --green: #98C379;
+    --cursor-color: #528BFF; /* One Dark cursor color */
+    --selection-color: #3E4451; /* One Dark selection color */
+    --highlight-color: #2C313C; /* One Dark highlight color */
+    --active-line: #2C313C; /* Active line background */
+}
+
+/* Base Styles with One Dark Pro feel */
+body {
+    background-color: var(--base03);
+    color: var(--base0);
+    font-family: 'Fira Code', 'Courier New', monospace; /* More modern font stack */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Selection color */
+::selection {
+    background: var(--selection-color);
+    color: var(--base0);
+}
+
+/* Terminal-like Container with One Dark Pro styling */
+#wrapper {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 20px;
+    background-color: var(--base02);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    border: 1px solid var(--base01);
+    transition: all 0.3s ease;
+}
+
+#wrapper:hover {
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+}
+
+/* Header Styles with animation */
+#header {
+    text-align: center;
+    padding: 2em 0;
+    border-bottom: 1px solid var(--base01);
+    position: relative;
+}
+
+#header::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--blue), transparent);
+}
+
+#header h1 {
+    color: var(--blue);
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    transition: all 0.3s ease;
+}
+
+
+#header p {
+    color: var(--base0);
+    font-size: 1.1em;
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+/* Navigation with One Dark Pro styling */
+#nav {
+    background-color: var(--base02);
+    border-bottom: 1px solid var(--base01);
+    padding: 1em 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(5px);
+}
+
+#nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#nav li {
+    margin: 0 1em;
+    position: relative;
+}
+
+#nav a {
+    color: var(--cyan);
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+#nav a::before {
+    content: '>';
+    margin-right: 8px;
+    color: var(--green);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+#nav a:hover::before {
+    opacity: 1;
+}
+
+#nav a:hover, #nav a.active {
+    background-color: var(--highlight-color);
+    color: var(--base2);
+    transform: translateY(-2px);
+}
+
+#nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: var(--blue);
+    border-radius: 50%;
+}
+
+/* Main Content Sections */
+#main {
+    padding: 2em 0;
+}
+
+.section {
+    margin-bottom: 3em;
+    padding: 0 2em;
+    transition: all 0.3s ease;
+}
+
+.section:hover {
+    transform: translateX(5px);
+}
+
+.major {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.major h2 {
+    color: var(--green);
+    border-bottom: 1px solid var(--base01);
+    padding-bottom: 0.5em;
+    display: inline-block;
+    position: relative;
+}
+
+.major h2::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--green), transparent);
+    opacity: 0.5;
+}
+
+/* Spotlight/Feature Sections with hover effects */
+.spotlight {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2em;
+    padding: 1.5em;
+    background-color: var(--base02);
+    border: 1px solid var(--base01);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.spotlight:hover {
+    border-color: var(--blue);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.spotlight .content {
+    flex: 1;
+    padding-right: 2em;
+}
+
+.spotlight .image {
+    flex: 0 0 200px;
+    transition: all 0.3s ease;
+}
+
+.spotlight:hover .image {
+    transform: scale(1.05);
+}
+
+.spotlight .image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Lists with One Dark Pro styling */
+ul.features {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+ul.features li {
+    flex: 0 0 calc(33% - 2em);
+    margin-bottom: 2em;
+    padding: 1.5em;
+    background-color: var(--highlight-color);
+    border: 1px solid var(--base01);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+ul.features li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: var(--blue);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+ul.features li:hover::before {
+    transform: translateX(0);
+}
+
+ul.features li:hover {
+    border-color: var(--blue);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+ul.features h3 {
+    color: var(--yellow);
+    margin-top: 0;
+    position: relative;
+    display: inline-block;
+}
+
+ul.features h3::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--yellow);
+    transition: width 0.3s ease;
+}
+
+ul.features li:hover h3::after {
+    width: 100%;
+}
+
+ul.features h3 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul.features h3 a:hover {
+    text-decoration: none;
+    color: var(--orange);
+}
+
+/* Experience Section with timeline effect */
+#experience li {
+    margin-bottom: 2em;
+    padding: 1.5em;
+    background-color: var(--highlight-color);
+    border-left: 3px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+#experience li:hover {
+    transform: translateX(10px);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#experience h3 {
+    color: var(--violet);
+    margin-top: 0;
+}
+
+#experience h3::before {
+    content: '▹';
+    color: var(--green);
+    margin-right: 10px;
+}
+
+#experience ul {
+    padding-left: 1.5em;
+}
+
+#experience ul li {
+    list-style-type: none;
+    margin-bottom: 0.5em;
+    background: none;
+    border: none;
+    padding: 0;
+    position: relative;
+    padding-left: 1.5em;
+}
+
+#experience ul li::before {
+    content: '•';
+    color: var(--blue);
+    position: absolute;
+    left: 0;
+}
+
+/* Footer with social icons */
+#footer {
+    padding: 2em;
+    text-align: center;
+    border-top: 1px solid var(--base01);
+    background-color: var(--highlight-color);
+    border-radius: 0 0 8px 8px;
+}
+
+#footer h2 {
+    color: var(--magenta);
+    margin-bottom: 1em;
+}
+
+#footer dl {
+    text-align: left;
+    display: inline-block;
+}
+
+#footer dt {
+    color: var(--cyan);
+    font-weight: bold;
+}
+
+#footer dd {
+    margin-left: 0;
+    margin-bottom: 1em;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.social-links a {
+    color: var(--base0);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.social-links a:hover {
+    color: var(--blue);
+    transform: translateY(-3px) scale(1.1);
+}
+
+/* Links with One Dark Pro styling */
+a {
+    color: var(--blue);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+a:hover {
+    color: var(--cyan);
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--cyan);
+    transition: width 0.3s ease;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+/* Code-like elements with One Dark Pro styling */
+code {
+    font-family: 'Fira Code', 'Courier New', monospace;
+    background-color: var(--highlight-color);
+    color: var(--green);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-size: 0.9em;
+    border: 1px solid var(--base01);
+}
+
+pre {
+    background-color: var(--highlight-color);
+    padding: 1em;
+    border-radius: 8px;
+    overflow-x: auto;
+    border: 1px solid var(--base01);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+}
+
+/* Terminal-like scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--base02);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--base01);
+    border-radius: 6px;
+    border: 3px solid var(--base02);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--blue);
+}
+
+/* Cursor animation */
+@media (min-width: 768px) {
+    .typewriter {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .typewriter::after {
+        content: '|';
+        position: absolute;
+        right: -8px;
+        color: var(--cursor-color);
+        animation: blink 1s infinite;
+    }
+    
+    @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .spotlight {
+        flex-direction: column;
+    }
+    
+    .spotlight .content {
+        padding-right: 0;
+        margin-bottom: 1em;
+    }
+    
+    ul.features li {
+        flex: 0 0 100%;
+    }
+    
+    #nav ul {
+        flex-direction: column;
+    }
+    
+    #nav li {
+        margin: 0.5em 0;
+    }
+    
+    #header p {
+        max-width: 90%;
+    }
+}
+
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(97, 175, 239, 0.1) 0%, transparent 2%),
+        radial-gradient(circle at 80% 70%, rgba(198, 120, 221, 0.1) 0%, transparent 2%),
+        radial-gradient(circle at 40% 60%, rgba(152, 195, 121, 0.1) 0%, transparent 2%);
+    background-size: 200% 200%;
+    z-index: -1;
+    animation: float 20s ease infinite;
+}
+
+@keyframes float {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
