@@ -4,6 +4,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Vishnu Garigipati — ML Engineer</title>
+    <meta name="description" content="Machine Learning Engineer with experience at Ericsson and ETS. Specializes in knowledge distillation, embedded ML, and production ML systems. CS graduate, Montreal.">
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website">
+    <meta property="og:url"         content="https://vishnucanada.github.io/personal-website/">
+    <meta property="og:title"       content="Vishnu Garigipati — ML Engineer">
+    <meta property="og:description" content="Machine Learning Engineer with experience at Ericsson and ETS. Specializes in knowledge distillation, embedded ML, and production ML systems.">
+    <meta property="og:image"       content="https://vishnucanada.github.io/personal-website/images/logo.svg">
+
+    <!-- Twitter card -->
+    <meta name="twitter:card"        content="summary">
+    <meta name="twitter:title"       content="Vishnu Garigipati — ML Engineer">
+    <meta name="twitter:description" content="Machine Learning Engineer with experience at Ericsson and ETS.">
+
     <link rel="icon" href="images/logo.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,13 +60,13 @@
             </nav>
 
             <!-- SUMMARY -->
-            <section id="summary" class="section">
+            <section id="summary" class="section fade-in">
                 <h2 class="section-title">Summary</h2>
                 <p class="summary-text">Computer Science graduate with over 1 year of internship experience in machine learning at Ericsson and ETS. Designed and deployed production ML systems for knowledge distillation, entropy-based statistical modelling, and end-to-end training and evaluation infrastructure. Proficient in PyTorch and TensorFlow with strong Python, Java, and C engineering foundations. Bilingual in English and French.</p>
             </section>
 
             <!-- EXPERIENCE -->
-            <section id="experience" class="section">
+            <section id="experience" class="section fade-in">
                 <h2 class="section-title">Experience</h2>
 
                 <div class="exp-item">
@@ -90,7 +104,7 @@
             </section>
 
             <!-- PROJECTS -->
-            <section id="projects" class="section">
+            <section id="projects" class="section fade-in">
                 <h2 class="section-title">Projects</h2>
 
                 <div class="project-item">
@@ -119,7 +133,7 @@
             </section>
 
             <!-- EDUCATION -->
-            <section id="education" class="section">
+            <section id="education" class="section fade-in">
                 <h2 class="section-title">Education</h2>
                 <div class="edu-item">
                     <div class="edu-header">
@@ -137,7 +151,7 @@
             </section>
 
             <!-- SKILLS -->
-            <section id="skills" class="section">
+            <section id="skills" class="section fade-in">
                 <h2 class="section-title">Skills</h2>
                 <div class="skills-grid">
                     <div class="skill-group">
@@ -172,5 +186,34 @@
         </footer>
 
     </div>
+    <script>
+        // Scroll-spy: highlight nav link for the section currently in view
+        const sections  = document.querySelectorAll('.section');
+        const navLinks  = document.querySelectorAll('.section-nav a');
+
+        const spyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+                    });
+                }
+            });
+        }, { rootMargin: '-20% 0px -70% 0px' });
+
+        sections.forEach(s => spyObserver.observe(s));
+
+        // Fade-in: sections slide up into view on scroll
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08 });
+
+        document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+    </script>
 </body>
 </html>
