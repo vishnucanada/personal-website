@@ -3,161 +3,145 @@
 		<title>Vishnu Garigipati</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="main.css" />
 		<link rel="icon" href="images/logo.svg">
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<body class="is-preload">
+	<body>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+		<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<span class="logo"><img src="images/logo.svg" alt="" /></span>
-						<h1>Vishnu Garigipati</h1>
-						<p>Hi, this is a personal website created to showcase my resume in a more visual format.<br/>
-						<a href="https://github.com/vishnucanada">GitHub</a> <br/>
-						<a href="resume_2025.docx">Resume</a> <br/>
-						<a href="https://www.linkedin.com/in/vishnu-garigipati-28aa562b5/">LinkedIn</a>
-					</p>
+			<!-- Header -->
+			<header id="header">
+				<span class="logo"><img src="images/logo.svg" alt="" /></span>
+				<h1>Vishnu Garigipati</h1>
+				<p class="tagline">Software Engineer &nbsp;·&nbsp; ML Researcher &nbsp;·&nbsp; CS Student</p>
+				<div class="header-links">
+					<a href="https://github.com/vishnucanada">GitHub</a>
+					<a href="https://www.linkedin.com/in/vishnu-garigipati-28aa562b5/">LinkedIn</a>
+					<a href="resume_2025.docx">Resume</a>
+				</div>
+			</header>
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					<li><a href="#intro" class="active">Background</a></li>
+					<li><a href="#education">Education</a></li>
+					<li><a href="#experience">Experience</a></li>
+					<li><a href="#projects">Projects</a></li>
+				</ul>
+			</nav>
+
+			<!-- Main -->
+			<div id="main">
+
+				<!-- Background -->
+				<section id="intro" class="main">
+					<header class="major">
+						<h2>Background</h2>
+					</header>
+					<p>Undergraduate CS student specializing in ML deployment and interdisciplinary research. Proven experience in developing embedded AI systems (Arduino),
+					authoring peer-reviewed publications (ICML/IEEE), and building full-stack SaaS solutions.
+					Passionate about leveraging information theory for impactful data-driven projects.</p>
+				</section>
+
+				<!-- Education -->
+				<section id="education" class="main">
+					<header class="major">
+						<h2>Education</h2>
+					</header>
+					<ul class="features">
+						<li>
+							<h3>Concordia University</h3>
+							<p><strong>Gina Cody School of Engineering &amp; Computer Science</strong><br/>
+							Jan 2021 – Dec 2025 (Expected)<br/>
+							Bachelor of Computer Science</p>
+						</li>
+						<li>
+							<h3>Marianopolis College</h3>
+							<p><strong>Social Sciences &nbsp;·&nbsp; Mathematics &amp; Finance</strong><br/>
+							Sep 2019 – Jun 2021<br/>
+							DEC</p>
+						</li>
+					</ul>
+				</section>
+
+				<!-- Experience -->
+				<section id="experience" class="main">
+					<header class="major">
+						<h2>Experience</h2>
 					</header>
 
-				<!-- Nav -->
-					<nav id="nav">
+					<div class="experience-item">
+						<h3>AI Research Intern &nbsp;—&nbsp; École de Technologie Supérieure</h3>
+						<div class="meta">June 2025 – Present</div>
 						<ul>
-							<li><a href="#intro" class="active">Background</a></li>
-							<li><a href="#education">Education</a></li>
-							<li><a href="#experience">Experience</a></li>
-							<li><a href="#projects">Projects</a></li>
+							<li>Conducted research on online learning methods for embedded systems in data science contexts</li>
+							<li>Authored paper intended for publication in ICML journals and major conferences</li>
+							<li>Deployed lightweight ML models on Arduino Nano using knowledge distillation, maintaining accuracy while reducing model size by 50%</li>
+							<li>Collaborated with a team of researchers to analyze data and develop innovative computational models</li>
 						</ul>
-					</nav>
-
-				<!-- Main -->
-					<div id="main">
-
-						<!-- Introduction -->
-							<section id="intro" class="main">
-								<div class="spotlight">
-									<div class="content">
-										<header class="major">
-											<h2>Background</h2>
-										</header>
-										<p>Undergraduate CS student specializing in ML deployment and interdisciplinary research. Proven experience in developing embedded AI systems (Arduino), 
-											authoring peer-reviewed publications (ICML/IEEE), and building full-stack SaaS solutions. 
-											Passionate about leveraging information theory for impactful data-driven projects.</p>
-									</div>
-								</div>
-							</section>
-
-						<!-- Education -->
-							<section id="education" class="main special">
-								<header class="major">
-									<h2>Education</h2>
-								</header>
-								<ul class="features">
-									<li>
-										<h3>Concordia University</h3>
-										<p><strong>Gina Cody School of Computer Science and Engineering</strong><br/>
-										January 2021 – December 2025(Expected)<br/>
-										Bachelor of Computer Science</p>
-									</li>
-									<li>
-										<h3>Marianopolis College</h3>
-										<p><strong>Social Sciences</strong><br/>
-										September 2019 - June 2021 <br/>
-										Mathematics and Finance <br/>
-										DEC
-										</p>
-										
-									</li>
-								</ul>
-							</section>
-
-						<!-- Experience -->
-							<section id="experience" class="main special"> 
-								<header class="major">
-									<h2>Experience</h2>
-								</header>
-								<!--<ul class="features"> -->
-									<div class="spotlight">
-										
-										<div class="content">
-											
-											
-												<h3>AI Research Intern - Ecole Techologie Superieure June 2025 – Present)</h3>
-												<p>
-													<ul>
-														<li>Conducted research on online learning methods for embedded systems in data science contexts</li>	
-														<li>Authored paper, intended for publication in ICML journals and other major conferences</li>	
-														<li>Deployed lightweight ML models on Arduino nano using knowledge distillation maintaining accuracy and reduce model by 50%.</li>
-														<li>Collaborated with a team of researchers to analyze data and develop innovative computational models.</li>
-
-													</ul>
-												
-												
-											</p>
-												<h3>Machine Learning Intern - Ericsson (January 2024 – September 2024)</h3>
-												<ul>
-													
-                                                    <li>Authored drafts for a patent application and a paper, “On Entropy-Based Distributions”, intended for publication in IEEE journals  </li>
-                                                    <li>Reviewed over 10 scientific research papers to gather insights relating to information theory and statistical mechanics.</li>
-                                                    <li>Deployed machine learning algorithms tailored for the telematics domain, enhancing data-driven insights by 17% by removing noisy data and predictive capabilities using CI/CD pipelines.</li>
-                                                    <li>Integrated automated workflow processes to reduce manual deployment time by 25%.</li>
-
-												</ul>
-											</li>
-										</div>
-									</div>
-								<!--</ul> -->
-							<!--</section>  -->
-						</section> 
-
-						<!-- Projects -->
-							<section id="projects" class="main special">
-								<header class="major">
-									<h2>Projects and Skills</h2>
-								</header>
-								<ul class="features">
-									<li>
-										<h3><a href="https://github.com/vishnucanada/Knowledge-Distillation">Knowledge Distillation on VAE</a></h3>
-										<p>Implemented response-based knowledge distillation on variational autoencoders; improved student model accuracy.</p>
-									</li>
-									<li>
-										<h3><a href="https://github.com/vishnucanada/MiniMaxRL">Minimax vs Reinforcement Learning</a></h3>
-										<p>Compared Minimax and RL strategies in solved games; demonstrated Minimax superiority in optimal conditions.</p>
-									</li>
-									<li>
-										<h3><a href="https://vishnucanada.github.io/personal-website/">Personal Website</a></h3>
-										<p>Built with HTML/CSS and React to showcase portfolio and resume.</p>
-									</li>
-								</ul>
-								<p><strong>Technical Skills:</strong> Python, Java, JavaScript, Prolog, Git, Gitlab, NumPy, Pandas, Scikit-Learn, PyTorch, Tensorflow, HTML, CSS, React.js</p>
-								<p><strong>Relevant Courses:</strong> OOP, Web Programming, Data Analytics, AI, Neural Networks, Cybersecurity</p>
-								<p><strong>Languages:</strong> Fluent in English and French</p>
-							</section>
 					</div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<h2>Contact</h2>
-							<dl class="alt">
-								<dt>Phone</dt>
-								<dd>(514)641-0366</dd>
-								<dt>Email</dt>
-								<dd><a href="mailto:vishnucanada@gmail.com">vishnucanada@gmail.com</a></dd>
-								<dt>GitHub</dt>
-								<dd><a href="https://github.com/vishnucanada">github.com/vishnucanada</a></dd>
-								<dt>linkedIn</dt>
-								<dd><a href="https://www.linkedin.com/in/vishnu-garigipati-28aa562b5/">linkedin.com/vishnucanada</a></dd>
-							</dl>
-						</section>
-					</footer>
+					<div class="experience-item">
+						<h3>Machine Learning Intern &nbsp;—&nbsp; Ericsson</h3>
+						<div class="meta">January 2024 – September 2024</div>
+						<ul>
+							<li>Authored drafts for a patent application and paper "On Entropy-Based Distributions", intended for IEEE publication</li>
+							<li>Reviewed 10+ scientific research papers on information theory and statistical mechanics</li>
+							<li>Deployed ML algorithms for the telematics domain, improving data-driven insights by 17% via CI/CD pipelines</li>
+							<li>Integrated automated workflow processes to reduce manual deployment time by 25%</li>
+						</ul>
+					</div>
+				</section>
+
+				<!-- Projects -->
+				<section id="projects" class="main">
+					<header class="major">
+						<h2>Projects &amp; Skills</h2>
+					</header>
+					<ul class="features">
+						<li>
+							<h3><a href="https://github.com/vishnucanada/Knowledge-Distillation">Knowledge Distillation on VAE</a></h3>
+							<p>Implemented response-based knowledge distillation on variational autoencoders; improved student model accuracy.</p>
+						</li>
+						<li>
+							<h3><a href="https://github.com/vishnucanada/MiniMaxRL">Minimax vs Reinforcement Learning</a></h3>
+							<p>Compared Minimax and RL strategies in solved games; demonstrated Minimax superiority in optimal conditions.</p>
+						</li>
+						<li>
+							<h3><a href="https://vishnucanada.github.io/personal-website/">Personal Website</a></h3>
+							<p>Built with HTML/CSS to showcase portfolio and resume.</p>
+						</li>
+					</ul>
+					<div class="skills-block">
+						<p><strong>Technical Skills:</strong> Python, Java, JavaScript, Prolog, Git, GitLab, NumPy, Pandas, Scikit-Learn, PyTorch, TensorFlow, HTML, CSS, React.js</p>
+						<p><strong>Relevant Courses:</strong> OOP, Web Programming, Data Analytics, AI, Neural Networks, Cybersecurity</p>
+						<p><strong>Languages:</strong> Fluent in English and French</p>
+					</div>
+				</section>
 
 			</div>
 
-		
+			<!-- Footer -->
+			<footer id="footer">
+				<h2>Contact</h2>
+				<dl class="alt">
+					<dt>Phone</dt>
+					<dd>(514) 641-0366</dd>
+					<dt>Email</dt>
+					<dd><a href="mailto:vishnucanada@gmail.com">vishnucanada@gmail.com</a></dd>
+					<dt>GitHub</dt>
+					<dd><a href="https://github.com/vishnucanada">github.com/vishnucanada</a></dd>
+					<dt>LinkedIn</dt>
+					<dd><a href="https://www.linkedin.com/in/vishnu-garigipati-28aa562b5/">linkedin.com/in/vishnu-garigipati</a></dd>
+				</dl>
+			</footer>
+
+		</div>
 
 	</body>
 </html>
