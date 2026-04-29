@@ -1,147 +1,177 @@
-<html>
-	<head>
-		<title>Vishnu Garigipati</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="main.css" />
-		<link rel="icon" href="images/logo.svg">
-	</head>
-	<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vishnu Garigipati — ML Engineer</title>
+    <link rel="icon" href="images/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="page">
 
-		<div id="wrapper">
+        <!-- HEADER -->
+        <header class="site-header">
+            <div class="header-top">
+                <div class="name-block">
+                    <h1>Vishnu Garigipati</h1>
+                    <p class="title">Machine Learning Engineer</p>
+                </div>
+                <span class="location">Montreal, Canada</span>
+            </div>
+            <div class="contact-bar">
+                <a href="tel:+15146410366">(514) 641-0366</a>
+                <span class="sep">·</span>
+                <a href="mailto:vishnucanada@gmail.com">vishnucanada@gmail.com</a>
+                <span class="sep">·</span>
+                <a href="https://www.linkedin.com/in/vishnu-garigipati-28aa562b5/" target="_blank">LinkedIn</a>
+                <span class="sep">·</span>
+                <a href="https://github.com/vishnucanada" target="_blank">GitHub</a>
+                <span class="sep">·</span>
+                <a href="resume_2025.docx">Resume</a>
+            </div>
+        </header>
 
-			<!-- Header -->
-			<header id="header">
-				<span class="logo"><img src="images/logo.svg" alt="" /></span>
-				<h1>Vishnu Garigipati</h1>
-				<p class="tagline">Software Engineer &nbsp;·&nbsp; ML Researcher &nbsp;·&nbsp; CS Student</p>
-				<div class="header-links">
-					<a href="https://github.com/vishnucanada">GitHub</a>
-					<a href="https://www.linkedin.com/in/vishnu-garigipati-28aa562b5/">LinkedIn</a>
-					<a href="resume_2025.docx">Resume</a>
-				</div>
-			</header>
+        <main>
 
-			<!-- Nav -->
-			<nav id="nav">
-				<ul>
-					<li><a href="#intro" class="active">Background</a></li>
-					<li><a href="#education">Education</a></li>
-					<li><a href="#experience">Experience</a></li>
-					<li><a href="#projects">Projects</a></li>
-				</ul>
-			</nav>
+            <!-- NAV -->
+            <nav class="section-nav">
+                <a href="#summary">Summary</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#skills">Skills</a>
+            </nav>
 
-			<!-- Main -->
-			<div id="main">
+            <!-- SUMMARY -->
+            <section id="summary" class="section">
+                <h2 class="section-title">Summary</h2>
+                <p class="summary-text">Computer Science graduate with over 1 year of internship experience in machine learning at Ericsson and ETS. Designed and deployed production ML systems for knowledge distillation, entropy-based statistical modelling, and end-to-end training and evaluation infrastructure. Proficient in PyTorch and TensorFlow with strong Python, Java, and C engineering foundations. Bilingual in English and French.</p>
+            </section>
 
-				<!-- Background -->
-				<section id="intro" class="main">
-					<header class="major">
-						<h2>Background</h2>
-					</header>
-					<p>Undergraduate CS student specializing in ML deployment and interdisciplinary research. Proven experience in developing embedded AI systems (Arduino),
-					authoring peer-reviewed publications (ICML/IEEE), and building full-stack SaaS solutions.
-					Passionate about leveraging information theory for impactful data-driven projects.</p>
-				</section>
+            <!-- EXPERIENCE -->
+            <section id="experience" class="section">
+                <h2 class="section-title">Experience</h2>
 
-				<!-- Education -->
-				<section id="education" class="main">
-					<header class="major">
-						<h2>Education</h2>
-					</header>
-					<ul class="features">
-						<li>
-							<h3>Concordia University</h3>
-							<p><strong>Gina Cody School of Engineering &amp; Computer Science</strong><br/>
-							Jan 2021 – Dec 2025 (Expected)<br/>
-							Bachelor of Computer Science</p>
-						</li>
-						<li>
-							<h3>Marianopolis College</h3>
-							<p><strong>Social Sciences &nbsp;·&nbsp; Mathematics &amp; Finance</strong><br/>
-							Sep 2019 – Jun 2021<br/>
-							DEC</p>
-						</li>
-					</ul>
-				</section>
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <div class="exp-meta">
+                            <span class="exp-role">AI Research Intern</span>
+                            <span class="exp-company">École de Technologie Supérieure</span>
+                            <span class="exp-location">Montreal, Canada</span>
+                        </div>
+                        <span class="exp-date">Jul 2025 – Dec 2025</span>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Designed cross-architecture knowledge distillation pipeline (CNN teacher → MLP student) enabling complex physical-layer signal learning on compute-constrained embedded hardware; improved industry-standard baseline by <mark>35%</mark></li>
+                        <li>Researched and implemented online learning algorithms for real-time context drift in 5G embedded systems; proposed novel modelling approaches validated through physics-based simulation at scale</li>
+                        <li>Built end-to-end ML training, evaluation, and benchmarking pipelines in PyTorch and TensorFlow; generated large-scale synthetic training data using channel simulation frameworks</li>
+                        <li>Collaborated with faculty researchers in bi-weekly sprint cycles; delivered complete system from algorithm design to open-sourced production implementation</li>
+                    </ul>
+                </div>
 
-				<!-- Experience -->
-				<section id="experience" class="main">
-					<header class="major">
-						<h2>Experience</h2>
-					</header>
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <div class="exp-meta">
+                            <span class="exp-role">Machine Learning Intern</span>
+                            <span class="exp-company">Ericsson</span>
+                            <span class="exp-location">Montreal, Canada</span>
+                        </div>
+                        <span class="exp-date">Jan 2024 – Sep 2024</span>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Built ML feature engineering and data cleaning pipelines for autonomous vehicle telematics; deployed statistical models for network behaviour prediction under sparse data constraints</li>
+                        <li>Deployed ML inference services with Docker, Kubernetes, and GitLab CI/CD on AWS and Azure; reduced deployment time <mark>25%</mark>; achieved <mark>60%</mark> latency reduction through distributed system optimization</li>
+                        <li>Designed intent decomposition reasoning system (Python, Prolog) for structured multi-step action planning from high-level natural language network management goals</li>
+                    </ul>
+                </div>
+            </section>
 
-					<div class="experience-item">
-						<h3>AI Research Intern &nbsp;—&nbsp; École de Technologie Supérieure</h3>
-						<div class="meta">June 2025 – Present</div>
-						<ul>
-							<li>Conducted research on online learning methods for embedded systems in data science contexts</li>
-							<li>Authored paper intended for publication in ICML journals and major conferences</li>
-							<li>Deployed lightweight ML models on Arduino Nano using knowledge distillation, maintaining accuracy while reducing model size by 50%</li>
-							<li>Collaborated with a team of researchers to analyze data and develop innovative computational models</li>
-						</ul>
-					</div>
+            <!-- PROJECTS -->
+            <section id="projects" class="section">
+                <h2 class="section-title">Projects</h2>
 
-					<div class="experience-item">
-						<h3>Machine Learning Intern &nbsp;—&nbsp; Ericsson</h3>
-						<div class="meta">January 2024 – September 2024</div>
-						<ul>
-							<li>Authored drafts for a patent application and paper "On Entropy-Based Distributions", intended for IEEE publication</li>
-							<li>Reviewed 10+ scientific research papers on information theory and statistical mechanics</li>
-							<li>Deployed ML algorithms for the telematics domain, improving data-driven insights by 17% via CI/CD pipelines</li>
-							<li>Integrated automated workflow processes to reduce manual deployment time by 25%</li>
-						</ul>
-					</div>
-				</section>
+                <div class="project-item">
+                    <h3 class="project-title">
+                        <a href="https://github.com/vishnucanada/Knowledge-Distillation" target="_blank">
+                            Efficient Neural Constellation Learning for MIMO via Cross-Architecture Distillation
+                        </a>
+                    </h3>
+                    <ul class="exp-bullets">
+                        <li>Designed novel distillation pipeline: CNN teacher trained on synthetic MIMO channel data; MLP student distilled via soft-label on-policy training for embedded real-time inference at the physical layer</li>
+                        <li>Built large-scale physics-based simulation and evaluation benchmarking in PyTorch and TensorFlow; tested across thousands of channel conditions achieving <mark>35%</mark> improvement over industry baseline</li>
+                    </ul>
+                </div>
 
-				<!-- Projects -->
-				<section id="projects" class="main">
-					<header class="major">
-						<h2>Projects &amp; Skills</h2>
-					</header>
-					<ul class="features">
-						<li>
-							<h3><a href="https://github.com/vishnucanada/Knowledge-Distillation">Knowledge Distillation on VAE</a></h3>
-							<p>Implemented response-based knowledge distillation on variational autoencoders; improved student model accuracy.</p>
-						</li>
-						<li>
-							<h3><a href="https://github.com/vishnucanada/MiniMaxRL">Minimax vs Reinforcement Learning</a></h3>
-							<p>Compared Minimax and RL strategies in solved games; demonstrated Minimax superiority in optimal conditions.</p>
-						</li>
-						<li>
-							<h3><a href="https://vishnucanada.github.io/personal-website/">Personal Website</a></h3>
-							<p>Built with HTML/CSS to showcase portfolio and resume.</p>
-						</li>
-					</ul>
-					<div class="skills-block">
-						<p><strong>Technical Skills:</strong> Python, Java, JavaScript, Prolog, Git, GitLab, NumPy, Pandas, Scikit-Learn, PyTorch, TensorFlow, HTML, CSS, React.js</p>
-						<p><strong>Relevant Courses:</strong> OOP, Web Programming, Data Analytics, AI, Neural Networks, Cybersecurity</p>
-						<p><strong>Languages:</strong> Fluent in English and French</p>
-					</div>
-				</section>
+                <div class="project-item">
+                    <h3 class="project-title">
+                        <a href="https://github.com/vishnucanada" target="_blank">
+                            HCS: Hyperdimensional Computing for Semantic Communication in Object Detection for UAVs
+                        </a>
+                    </h3>
+                    <ul class="exp-bullets">
+                        <li>Sole designer and implementer of a neuro-symbolic edge AI system combining deep learning object detection with Hyperdimensional Computing (HDC) symbolic encoding for semantic compression on UAV hardware</li>
+                        <li>Achieved <mark>75%</mark> bandwidth reduction and <mark>20%</mark> energy savings through task-relevant feature selection and HDC encoding; demonstrated symbolic representations complement neural models for edge deployment</li>
+                    </ul>
+                </div>
+            </section>
 
-			</div>
+            <!-- EDUCATION -->
+            <section id="education" class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="edu-item">
+                    <div class="edu-header">
+                        <div>
+                            <span class="edu-school">Concordia University</span>
+                            <span class="edu-degree">Bachelor of Computer Science</span>
+                            <span class="edu-courses">Deep Learning &nbsp;·&nbsp; Neural Networks &nbsp;·&nbsp; Artificial Intelligence &nbsp;·&nbsp; Data Structures &amp; Algorithms</span>
+                        </div>
+                        <div class="edu-right">
+                            <span class="exp-date">Jan 2021 – Dec 2025</span>
+                            <span class="edu-location">Montreal, Canada</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-			<!-- Footer -->
-			<footer id="footer">
-				<h2>Contact</h2>
-				<dl class="alt">
-					<dt>Phone</dt>
-					<dd>(514) 641-0366</dd>
-					<dt>Email</dt>
-					<dd><a href="mailto:vishnucanada@gmail.com">vishnucanada@gmail.com</a></dd>
-					<dt>GitHub</dt>
-					<dd><a href="https://github.com/vishnucanada">github.com/vishnucanada</a></dd>
-					<dt>LinkedIn</dt>
-					<dd><a href="https://www.linkedin.com/in/vishnu-garigipati-28aa562b5/">linkedin.com/in/vishnu-garigipati</a></dd>
-				</dl>
-			</footer>
+            <!-- SKILLS -->
+            <section id="skills" class="section">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-group">
+                        <span class="skill-label">Languages</span>
+                        <div class="skill-tags">
+                            <span>Python</span><span>Java</span><span>C</span>
+                            <span>JavaScript</span><span>SQL</span><span>Prolog</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <span class="skill-label">ML / AI</span>
+                        <div class="skill-tags">
+                            <span>PyTorch</span><span>TensorFlow</span><span>Scikit-Learn</span>
+                            <span>NumPy</span><span>Pandas</span><span>Knowledge Distillation</span>
+                            <span>Online Learning</span><span>MaxEnt</span><span>HDC</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <span class="skill-label">Infra</span>
+                        <div class="skill-tags">
+                            <span>Docker</span><span>Kubernetes</span><span>GitLab CI/CD</span>
+                            <span>AWS</span><span>Azure</span><span>Git</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-		</div>
+        </main>
 
-	</body>
+        <footer class="site-footer">
+            <p>Vishnu Garigipati &nbsp;·&nbsp; Montreal, Canada &nbsp;·&nbsp; <a href="mailto:vishnucanada@gmail.com">vishnucanada@gmail.com</a></p>
+        </footer>
+
+    </div>
+</body>
 </html>
