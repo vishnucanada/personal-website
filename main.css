@@ -8,6 +8,7 @@
   --baby-blue-ice: #9eb7e5;
   --cornflower-blue: #648de5;
   --dusk-blue: #304c89;
+  --signal: #5b9d6b;
 
   /* =========================
      SEMANTIC ROLES (IMPORTANT)
@@ -39,7 +40,35 @@
   --radius: 14px;
 
   --font: "Georgia", "Times New Roman", serif;
-  --mono: "Courier New", monospace;
+  --mono: "JetBrains Mono", "Courier New", monospace;
+
+  /* canvas/hero node colors (overridden per theme) */
+  --node: rgba(100, 141, 229, .55);
+  --link-line: rgba(100, 141, 229, .18);
+}
+
+/* =========================
+   DARK THEME ("dusk") — same brand, night palette
+   ========================= */
+:root[data-theme="dark"] {
+  --bg: #11151f;
+  --surface: #1a2030;
+  --surface-2: rgba(255,255,255,.04);
+
+  --text: #e6e9f0;
+  --text-muted: #aeb6c8;
+  --text-dim: #7f8aa3;
+
+  --border: rgba(158, 183, 229, .18);
+  --border-soft: rgba(205, 195, 146, .22);
+
+  --accent-soft: rgba(100, 141, 229, .18);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, .35);
+  --shadow-md: 0 8px 22px rgba(0, 0, 0, .45);
+
+  --node: rgba(158, 183, 229, .6);
+  --link-line: rgba(158, 183, 229, .16);
 }
 
 /* =========================
@@ -281,7 +310,7 @@ a:hover {
 
 .badge-current::before {
   content: "●";
-  color: var(--green);
+  color: var(--signal);
   animation: pulse 1.8s infinite;
 }
 
