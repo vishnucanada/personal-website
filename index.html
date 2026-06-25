@@ -23,12 +23,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
+
+    <!-- set theme before paint to avoid a flash -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('theme');
+                var dark = saved ? saved === 'dark'
+                    : matchMedia('(prefers-color-scheme: dark)').matches;
+                if (dark) document.documentElement.setAttribute('data-theme', 'dark');
+            } catch (e) {}
+        })();
+    </script>
 </head>
 <body>
+    <div class="scroll-progress" id="scrollProgress"></div>
     <div class="page">
 
         <!-- HEADER -->
         <header class="site-header">
+            <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+            <button class="theme-toggle" id="themeToggle" type="button"
+                    aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
             <div class="header-top">
                 <div class="name-block">
                     <h1>Vishnu Garigipati</h1>
@@ -65,19 +81,19 @@
                 <p class="summary-text">Computer Science graduate with over 1 year of internship experience in machine learning at Ericsson and ETS. Designed and deployed production ML systems for knowledge distillation, entropy-based statistical modelling, and end-to-end training and evaluation infrastructure. Proficient in PyTorch and TensorFlow with strong Python, Java, and C engineering foundations. Bilingual in English and French.</p>
                 <div class="stats-strip">
                     <div>
-                        <span class="stat-num">1+</span>
+                        <span class="stat-num" data-target="1" data-suffix="+">1+</span>
                         <span class="stat-label">yrs experience</span>
                     </div>
                     <div>
-                        <span class="stat-num">2</span>
+                        <span class="stat-num" data-target="2">2</span>
                         <span class="stat-label">patents &amp; papers</span>
                     </div>
                     <div>
-                        <span class="stat-num">35%</span>
+                        <span class="stat-num" data-target="35" data-suffix="%">35%</span>
                         <span class="stat-label">baseline improvement</span>
                     </div>
                     <div>
-                        <span class="stat-num">2</span>
+                        <span class="stat-num" data-target="2">2</span>
                         <span class="stat-label">production systems</span>
                     </div>
                 </div>
