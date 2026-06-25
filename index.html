@@ -23,18 +23,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
-
-    <!-- set theme before paint to avoid a flash -->
-    <script>
-        (function () {
-            try {
-                var saved = localStorage.getItem('theme');
-                var dark = saved ? saved === 'dark'
-                    : matchMedia('(prefers-color-scheme: dark)').matches;
-                if (dark) document.documentElement.setAttribute('data-theme', 'dark');
-            } catch (e) {}
-        })();
-    </script>
 </head>
 <body>
     <div class="scroll-progress" id="scrollProgress"></div>
@@ -43,8 +31,6 @@
         <!-- HEADER -->
         <header class="site-header">
             <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
-            <button class="theme-toggle" id="themeToggle" type="button"
-                    aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
             <div class="header-top">
                 <div class="name-block">
                     <h1>Vishnu Garigipati</h1>
@@ -328,21 +314,6 @@
                 });
             });
         }
-
-        /* ---------- Theme toggle ---------- */
-        const toggle = document.getElementById('themeToggle');
-        const setIcon = () =>
-            toggle.textContent =
-                document.documentElement.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
-        setIcon();
-        toggle.addEventListener('click', () => {
-            const root = document.documentElement;
-            const dark = root.getAttribute('data-theme') === 'dark';
-            if (dark) root.removeAttribute('data-theme');
-            else root.setAttribute('data-theme', 'dark');
-            try { localStorage.setItem('theme', dark ? 'light' : 'dark'); } catch (e) {}
-            setIcon();
-        });
 
         /* ---------- Generative hero: drifting constellation / neural-net ---------- */
         (function () {
