@@ -51,53 +51,9 @@
   --font: "Georgia", "Times New Roman", serif;
   --mono: "JetBrains Mono", "Courier New", monospace;
 
-  /* canvas/hero node colors (overridden per theme) */
+  /* canvas/hero node colors */
   --node: rgba(100, 141, 229, .55);
   --link-line: rgba(100, 141, 229, .18);
-}
-
-/* =========================
-   DARK THEME ("dusk") — same brand, night palette
-   ========================= */
-:root[data-theme="dark"] {
-  --bg: #11151f;
-  --surface: #1a2030;
-  --surface-2: rgba(255,255,255,.04);
-
-  --text: #e6e9f0;
-  --text-muted: #aeb6c8;
-  --text-dim: #7f8aa3;
-
-  --border: rgba(158, 183, 229, .18);
-  --border-soft: rgba(205, 195, 146, .22);
-
-  --accent-soft: rgba(100, 141, 229, .18);
-
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, .35);
-  --shadow-md: 0 8px 22px rgba(0, 0, 0, .45);
-
-  --node: rgba(158, 183, 229, .6);
-  --link-line: rgba(158, 183, 229, .16);
-
-  --card-bg: rgba(255,255,255,.04);
-  --nav-bg: rgba(26,32,48,.75);
-  --tag-bg: rgba(255,255,255,.05);
-  --header-bg: linear-gradient(90deg,
-      rgba(100,141,229,.12),
-      rgba(26,32,48,.5),
-      rgba(205,195,146,.06));
-
-  /* lift the deep-blue headings/links off the dark bg */
-  --dusk-blue: #aec6f5;
-}
-
-:root[data-theme="dark"] a {
-  border-bottom-color: rgba(158,183,229,.3);
-}
-
-:root[data-theme="dark"] ::selection {
-  background: var(--cornflower-blue);
-  color: #0b0e16;
 }
 
 /* =========================
@@ -108,25 +64,13 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   font-family: var(--font);
-  background: var(--page-bg);
-  color: var(--text);
-  font-size: 16px;
-  line-height: 1.7;
-  transition: background .4s ease, color .4s ease;
-}
-
-:root {
-  --page-bg:
+  background:
     radial-gradient(circle at 20% 10%, rgba(158,183,229,.25), transparent 45%),
     radial-gradient(circle at 80% 90%, rgba(205,195,146,.25), transparent 50%),
     linear-gradient(180deg, var(--soft-linen), #f7f6f2);
-}
-
-:root[data-theme="dark"] {
-  --page-bg:
-    radial-gradient(circle at 20% 10%, rgba(100,141,229,.12), transparent 45%),
-    radial-gradient(circle at 80% 90%, rgba(205,195,146,.08), transparent 50%),
-    linear-gradient(180deg, #0d111a, #11151f);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.7;
 }
 
 /* soft paper selection */
@@ -182,36 +126,6 @@ a:hover {
 .site-header > *:not(.hero-canvas) {
   position: relative;
   z-index: 1;
-}
-
-/* theme toggle */
-.theme-toggle {
-  position: absolute;
-  top: 1rem;
-  right: 1.5rem;
-  z-index: 2;
-
-  width: 2.25rem;
-  height: 2.25rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: var(--nav-bg);
-  backdrop-filter: blur(6px);
-  color: var(--dusk-blue);
-
-  font-size: 1rem;
-  line-height: 1;
-  cursor: pointer;
-  transition: transform .2s ease, background .2s ease, border-color .2s ease;
-}
-
-.theme-toggle:hover {
-  transform: translateY(-2px) rotate(-8deg);
-  border-color: var(--cornflower-blue);
 }
 
 .name-block h1 {
@@ -543,5 +457,4 @@ mark {
 
   .stat-num { font-size: 1.6rem; }
   .stats-strip > div { flex-basis: 40%; }
-  .theme-toggle { top: .75rem; right: 1rem; }
 }
