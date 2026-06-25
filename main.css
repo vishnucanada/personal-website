@@ -232,15 +232,21 @@ a:hover {
    ========================= */
 .section-nav {
   display: flex;
+  flex-wrap: wrap;
   gap: .5rem;
+
+  position: sticky;
+  top: .75rem;
+  z-index: 20;
 
   padding: .75rem 1rem;
   margin: 1rem 0 2rem;
 
-  background: rgba(255,255,255,.7);
+  background: var(--nav-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
 
+  box-shadow: var(--shadow-sm);
   backdrop-filter: blur(10px);
 }
 
@@ -268,6 +274,7 @@ a:hover {
    ========================= */
 .section {
   margin-bottom: 2.5rem;
+  scroll-margin-top: 5rem;
 }
 
 .section-title {
@@ -291,7 +298,7 @@ a:hover {
 .exp-item,
 .project-item,
 .skills-grid {
-  background: rgba(255,255,255,.75);
+  background: var(--card-bg);
   border: 1px solid var(--border);
 
   border-radius: var(--radius);
@@ -300,12 +307,18 @@ a:hover {
   padding: 1.5rem;
   margin-bottom: 1rem;
 
-  transition: transform .2s ease, box-shadow .2s ease;
+  transition: transform .2s ease, box-shadow .2s ease, background .4s ease;
+}
+
+/* tilt: cards get perspective + smooth reset; JS sets per-card transform */
+.exp-item,
+.project-item {
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 
 .exp-item:hover,
 .project-item:hover {
-  transform: translateY(-3px);
   box-shadow: var(--shadow-md);
 }
 
@@ -364,7 +377,7 @@ a:hover {
   border-radius: 999px;
   border: 1px solid var(--border-soft);
 
-  background: rgba(255,255,255,.6);
+  background: var(--tag-bg);
 
   font-family: var(--mono);
   font-size: .75rem;
@@ -404,6 +417,118 @@ a:hover {
 }
 
 /* =========================
+   STATS STRIP
+   ========================= */
+.stats-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.stats-strip > div {
+  flex: 1 1 120px;
+  padding: 1rem 1.25rem;
+
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-num {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--cornflower-blue);
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-label {
+  display: block;
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .04em;
+  color: var(--text-dim);
+}
+
+/* =========================
+   HIGHLIGHT MARKS (palette-aware, replaces default yellow)
+   ========================= */
+mark {
+  background: var(--accent-soft);
+  color: inherit;
+  padding: 0 .2em;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* =========================
+   SCROLL PROGRESS BAR
+   ========================= */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  z-index: 50;
+
+  background: linear-gradient(90deg, var(--cornflower-blue), var(--baby-blue-ice));
+  transition: width .1s linear;
+}
+
+/* =========================
+   SCROLL REVEALS (staggered)
+   ========================= */
+.fade-in {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* children cascade in; --i set per element in JS */
+.fade-in.visible .exp-item,
+.fade-in.visible .project-item,
+.fade-in.visible .stats-strip > div,
+.fade-in.visible .skill-group {
+  animation: rise .55s ease both;
+  animation-delay: calc(var(--i, 0) * 90ms);
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* =========================
+   REDUCED MOTION — disable all motion, show content statically
+   ========================= */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .fade-in,
+  .fade-in.visible .exp-item,
+  .fade-in.visible .project-item,
+  .fade-in.visible .stats-strip > div,
+  .fade-in.visible .skill-group {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .badge-current::before { animation: none; }
+  .scroll-progress { transition: none; }
+}
+
+/* =========================
    MOBILE
    ========================= */
 @media (max-width: 700px) {
@@ -415,4 +540,8 @@ a:hover {
   .project-item {
     padding: 1rem;
   }
+
+  .stat-num { font-size: 1.6rem; }
+  .stats-strip > div { flex-basis: 40%; }
+  .theme-toggle { top: .75rem; right: 1rem; }
 }
