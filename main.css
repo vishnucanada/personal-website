@@ -31,6 +31,15 @@
 
   --highlight: var(--baby-blue-ice);
 
+  /* translucent surfaces (flip per theme) */
+  --card-bg: rgba(255,255,255,.75);
+  --nav-bg: rgba(255,255,255,.7);
+  --tag-bg: rgba(255,255,255,.6);
+  --header-bg: linear-gradient(90deg,
+      rgba(158,183,229,.15),
+      rgba(232,229,218,.4),
+      rgba(205,195,146,.15));
+
   /* =========================
      EFFECTS
      ========================= */
@@ -69,21 +78,55 @@
 
   --node: rgba(158, 183, 229, .6);
   --link-line: rgba(158, 183, 229, .16);
+
+  --card-bg: rgba(255,255,255,.04);
+  --nav-bg: rgba(26,32,48,.75);
+  --tag-bg: rgba(255,255,255,.05);
+  --header-bg: linear-gradient(90deg,
+      rgba(100,141,229,.12),
+      rgba(26,32,48,.5),
+      rgba(205,195,146,.06));
+
+  /* lift the deep-blue headings/links off the dark bg */
+  --dusk-blue: #aec6f5;
+}
+
+:root[data-theme="dark"] a {
+  border-bottom-color: rgba(158,183,229,.3);
+}
+
+:root[data-theme="dark"] ::selection {
+  background: var(--cornflower-blue);
+  color: #0b0e16;
 }
 
 /* =========================
    BASE
    ========================= */
+html { scroll-behavior: smooth; }
+
 body {
   margin: 0;
   font-family: var(--font);
-  background:
-    radial-gradient(circle at 20% 10%, rgba(158,183,229,.25), transparent 45%),
-    radial-gradient(circle at 80% 90%, rgba(205,195,146,.25), transparent 50%),
-    linear-gradient(180deg, var(--soft-linen), #f7f6f2);
+  background: var(--page-bg);
   color: var(--text);
   font-size: 16px;
   line-height: 1.7;
+  transition: background .4s ease, color .4s ease;
+}
+
+:root {
+  --page-bg:
+    radial-gradient(circle at 20% 10%, rgba(158,183,229,.25), transparent 45%),
+    radial-gradient(circle at 80% 90%, rgba(205,195,146,.25), transparent 50%),
+    linear-gradient(180deg, var(--soft-linen), #f7f6f2);
+}
+
+:root[data-theme="dark"] {
+  --page-bg:
+    radial-gradient(circle at 20% 10%, rgba(100,141,229,.12), transparent 45%),
+    radial-gradient(circle at 80% 90%, rgba(205,195,146,.08), transparent 50%),
+    linear-gradient(180deg, #0d111a, #11151f);
 }
 
 /* soft paper selection */
@@ -120,14 +163,55 @@ a:hover {
    HEADER (soft academic banner)
    ========================= */
 .site-header {
-  padding: 3.5rem 0 2rem;
+  position: relative;
+  overflow: hidden;
+  padding: 3.5rem 1.5rem 2rem;
+  margin: 0 -1.5rem;
   border-bottom: 1px solid var(--border);
-  background:
-    linear-gradient(90deg,
-      rgba(158,183,229,.15),
-      rgba(232,229,218,.4),
-      rgba(205,195,146,.15)
-    );
+  background: var(--header-bg);
+}
+
+/* generative hero canvas sits behind the header content */
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.site-header > *:not(.hero-canvas) {
+  position: relative;
+  z-index: 1;
+}
+
+/* theme toggle */
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  z-index: 2;
+
+  width: 2.25rem;
+  height: 2.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--nav-bg);
+  backdrop-filter: blur(6px);
+  color: var(--dusk-blue);
+
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px) rotate(-8deg);
+  border-color: var(--cornflower-blue);
 }
 
 .name-block h1 {
