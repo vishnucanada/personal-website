@@ -363,6 +363,9 @@ and cloud (Google Cloud, AWS, Azure) experience. Two IEEE papers under review. B
             const css = v => getComputedStyle(document.documentElement)
                 .getPropertyValue(v).trim();
 
+            // a few nodes carry a thematic label and react to the cursor
+            const LABELS = ['PyTorch', 'Distillation', '5G', 'Docker', 'HDC', 'MIMO'];
+
             function resize() {
                 const dpr = Math.min(devicePixelRatio || 1, 2);
                 w = header.clientWidth;
@@ -380,6 +383,13 @@ and cloud (Google Cloud, AWS, Azure) experience. Two IEEE papers under review. B
                     vx: (Math.random() - 0.5) * 0.25,
                     vy: (Math.random() - 0.5) * 0.25
                 }));
+                // promote a spread of nodes to labeled anchors (drift slowly so text stays legible)
+                LABELS.forEach((label, k) => {
+                    const n = nodes[Math.floor(((k + 0.5) / LABELS.length) * nodes.length)];
+                    if (!n) return;
+                    n.label = label; n.glow = 0;
+                    n.vx *= 0.35; n.vy *= 0.35;
+                });
             }
 
             const mouse = { x: -999, y: -999 };
@@ -423,10 +433,31 @@ and cloud (Google Cloud, AWS, Azure) experience. Two IEEE papers under review. B
                 ctx.globalAlpha = 1;
                 ctx.fillStyle = nodeColor;
                 for (const n of nodes) {
+                    if (n.label) continue; // labeled anchors drawn below
                     ctx.beginPath();
                     ctx.arc(n.x, n.y, 2, 0, Math.PI * 2);
                     ctx.fill();
                 }
+
+                // labeled anchor nodes: faint text + cursor-reactive pulse
+                const textColor = css('--accent-dark') || '#304c89';
+                ctx.font = '11px ' + (css('--mono') || 'monospace');
+                ctx.textBaseline = 'middle';
+                for (const n of nodes) {
+                    if (!n.label) continue;
+                    const dm = Math.hypot(n.x - mouse.x, n.y - mouse.y);
+                    const near = dm < 140 ? 1 - dm / 140 : 0;
+                    n.glow += (near - n.glow) * 0.12; // eased pulse toward cursor proximity
+                    ctx.globalAlpha = 0.55 + n.glow * 0.45;
+                    ctx.fillStyle = nodeColor;
+                    ctx.beginPath();
+                    ctx.arc(n.x, n.y, 2.5 + n.glow * 2.5, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.globalAlpha = 0.3 + n.glow * 0.6;
+                    ctx.fillStyle = textColor;
+                    ctx.fillText(n.label, n.x + 8, n.y);
+                }
+                ctx.globalAlpha = 1;
             }
 
             function loop() { draw(); raf = requestAnimationFrame(loop); }
