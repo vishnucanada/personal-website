@@ -354,6 +354,23 @@ a:hover {
 }
 
 /* =========================
+   FOOTER
+   ========================= */
+.site-footer {
+  text-align: center;
+  margin: 3rem 0 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.site-footer p {
+  font-family: var(--mono);
+  font-size: .8rem;
+  color: var(--text-dim);
+  margin: 0;
+}
+
+/* =========================
    CONTACT CTA
    ========================= */
 .cta {
@@ -534,4 +551,14 @@ mark {
 
   .stat-num { font-size: 1.6rem; }
   .stats-strip > div { flex-basis: 40%; }
+
+  /* keep nav pills on one swipeable row instead of wrapping */
+  .section-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .section-nav::-webkit-scrollbar { display: none; }
+  .section-nav a { flex: 0 0 auto; }
 }
