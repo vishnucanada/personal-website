@@ -333,6 +333,17 @@ a:hover {
   font-weight: 600;
 }
 
+.project-links {
+  margin-top: .35rem;
+  font-family: var(--mono);
+  font-size: .78rem;
+}
+
+.project-links .sep {
+  color: var(--text-dim);
+  margin: 0 .3rem;
+}
+
 .project-tags {
   display: flex;
   flex-wrap: wrap;
