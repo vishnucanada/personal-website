@@ -11,12 +11,16 @@
     <meta property="og:url"         content="https://vishnucanada.github.io/personal-website/">
     <meta property="og:title"       content="Vishnu Garigipati — ML Engineer">
     <meta property="og:description" content="Machine Learning Engineer with experience at Ericsson and ETS. Specializes in knowledge distillation, embedded ML, and production ML systems.">
-    <meta property="og:image"       content="https://vishnucanada.github.io/personal-website/images/logo.svg">
+    <meta property="og:image"       content="https://vishnucanada.github.io/personal-website/images/og-cover.png">
+    <meta property="og:image:width"  content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt"   content="Vishnu Garigipati — Machine Learning Engineer, Montreal, Canada">
 
     <!-- Twitter card -->
-    <meta name="twitter:card"        content="summary">
+    <meta name="twitter:card"        content="summary_large_image">
     <meta name="twitter:title"       content="Vishnu Garigipati — ML Engineer">
     <meta name="twitter:description" content="Machine Learning Engineer with experience at Ericsson and ETS.">
+    <meta name="twitter:image"       content="https://vishnucanada.github.io/personal-website/images/og-cover.png">
 
     <link rel="icon" href="images/logo.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,11 +46,11 @@
                 
                 <a href="mailto:vishnucanada@gmail.com">vishnucanada@gmail.com</a>
                 <span class="sep">·</span>
-                <a href="https://www.linkedin.com/in/vishnu-garigipati-28aa562b5/" target="_blank">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/vishnu-garigipati-28aa562b5/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 <span class="sep">·</span>
-                <a href="https://github.com/vishnucanada" target="_blank">GitHub</a>
+                <a href="https://github.com/vishnucanada" target="_blank" rel="noopener noreferrer">GitHub</a>
                 <span class="sep">·</span>
-                <a href="vishnu_garigipati_resume_swe.pdf">Resume</a>
+                <a href="vishnu_garigipati_resume_swe.pdf" target="_blank" rel="noopener">Resume</a>
             </div>
         </header>
 
@@ -74,7 +78,7 @@ and cloud (Google Cloud, AWS, Azure) experience. Two IEEE papers under review. B
                     </div>
                     <div>
                         <span class="stat-num" data-target="2">2</span>
-                        <span class="stat-label">patents &amp; papers</span>
+                        <span class="stat-label">papers under review</span>
                     </div>
                     <div>
                         <span class="stat-num" data-target="35" data-suffix="%">35%</span>
@@ -148,26 +152,40 @@ and cloud (Google Cloud, AWS, Azure) experience. Two IEEE papers under review. B
 
                 <div class="project-item">
                     <h3 class="project-title">
-                        <a href="https://github.com/vishnucanada/Knowledge-Distillation" target="_blank">
+                        <a href="https://github.com/vishnucanada/Knowledge-Distillation" target="_blank" rel="noopener noreferrer">
                             Efficient Neural Constellation Learning for MIMO via Cross-Architecture Distillation
                         </a>
                     </h3>
+                    <div class="project-metrics">
+                        <span class="metric"><strong>35%</strong> over baseline</span>
+                        <span class="metric"><strong>1000s</strong> channel conditions</span>
+                    </div>
                     <ul class="exp-bullets">
                         <li>Designed novel distillation pipeline: CNN teacher trained on synthetic MIMO channel data; MLP student distilled via soft-label on-policy training for embedded real-time inference at the physical layer</li>
                         <li>Built large-scale physics-based simulation and evaluation benchmarking in PyTorch and TensorFlow; tested across thousands of channel conditions achieving <mark>35%</mark> improvement over industry baseline</li>
                     </ul>
+                    <div class="project-tags">
+                        <span>PyTorch</span><span>TensorFlow</span><span>Knowledge Distillation</span><span>MIMO</span><span>Embedded ML</span>
+                    </div>
                 </div>
 
                 <div class="project-item">
                     <h3 class="project-title">
-                        <a href="https://github.com/vishnucanada" target="_blank">
+                        <a href="https://github.com/vishnucanada" target="_blank" rel="noopener noreferrer">
                             HCS: Hyperdimensional Computing for Semantic Communication in Object Detection for UAVs
                         </a>
                     </h3>
+                    <div class="project-metrics">
+                        <span class="metric"><strong>75%</strong> bandwidth saved</span>
+                        <span class="metric"><strong>20%</strong> energy saved</span>
+                    </div>
                     <ul class="exp-bullets">
                         <li>Sole designer and implementer of a neuro-symbolic edge AI system combining deep learning object detection with Hyperdimensional Computing (HDC) symbolic encoding for semantic compression on UAV hardware</li>
                         <li>Achieved <mark>75%</mark> bandwidth reduction and <mark>20%</mark> energy savings through task-relevant feature selection and HDC encoding; demonstrated symbolic representations complement neural models for edge deployment</li>
                     </ul>
+                    <div class="project-tags">
+                        <span>Edge AI</span><span>HDC</span><span>Object Detection</span><span>Neuro-Symbolic</span><span>UAV</span>
+                    </div>
                 </div>
             </section>
 
@@ -221,6 +239,7 @@ and cloud (Google Cloud, AWS, Azure) experience. Two IEEE papers under review. B
         </main>
 
         <footer class="site-footer">
+            <a class="cta" href="mailto:vishnucanada@gmail.com">Get in touch</a>
             <p>Vishnu Garigipati &nbsp;·&nbsp; Montreal, Canada &nbsp;·&nbsp; <a href="mailto:vishnucanada@gmail.com">vishnucanada@gmail.com</a></p>
         </footer>
 
